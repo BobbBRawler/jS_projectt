@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login</title>
+    <style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0.5;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('1970-Porsche-917K-002-1080.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        .login-container {
+            width: 100%;
+            max-width: 400px;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            text-align: center;
+            
+        }
+        h1 {font-size: 2rem; margin-bottom: 10px; color: #fff;  }
+        .book {  font-size: 1.2rem; margin-bottom: 25px; color: #ddd;  }
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #333;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        input[type="email"]:focus,
+        input[type="password"]:focus {
+            outline: none;
+            transform: scale(1.02);
+            box-shadow: 0 0 10px rgba(0, 123, 255, 0.6);
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+        button:hover {
+            background: #0056b3;
+            transform: scale(1.05);
+        }
+        .options { margin-top: 15px;  display: flex; justify-content: space-between; font-size: 0.9rem; }
+        .options a {color: #fff; text-decoration: none; transition: color 0.3s;  }
+        .options a:hover {color: #ffcc00;}
+        .remember {display: flex; align-items: center; justify-content: flex-start; margin-bottom: 15px; font-size: 0.9rem; }
+        .remember input { margin-right: 8px; }
+        .remember label { color: #ddd;  }
+        .error {  color: red;  margin-top: 15px;  display: none; }
+        .signup { margin-top: 20px; font-size: 1rem; color: #fff;  }
+        .signup a { color: #ffcc00; text-decoration: none; }
+        .signup a:hover { text-decoration: underline;}
+        @media (max-width: 600px) { .login-container {padding: 20px;} }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Car Rentals</h1>
+        <p class="book">Book your desired cars for the best trips</p>
+
+        <form id="login-Form">
+            <input type="email" id="loginEmail" placeholder="Enter your email" required>
+            <input type="password" id="loginPassword" placeholder="Enter your password" required>
+
+            <div class="remember">
+                <input type="checkbox" id="rememberMe">
+                <label for="rememberMe">Remember me</label>
+            </div>
+
+            <button type="submit" id="loginForm">Login</button>
+            <p class="error" id="error">Invalid username or password.</p>
+        </form>
+
+        <div class="options">
+            <a href="#" id="forgotPassword">Forgot Password?</a>
+            <a href="#">Privacy Policy</a>
+        </div>
+
+        <div class="signup">
+            <p>Don’t have an account? <a href="signup.html">Sign up here</a></p>
+        </div>
+    </div>
+
+    <script type="module">  
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+        import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
+
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyCXXRNOJ1CF-oQljWEKmkdpKq3bKY3O1oQ",
+            authDomain: "crazy-car-rentals.firebaseapp.com",
+            projectId: "crazy-car-rentals",
+            storageBucket: "crazy-car-rentals.firebasestorage.app",
+            messagingSenderId: "484511511621",
+            appId: "1:484511511621:web:a81e56017ab45541781f2c"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        
+
+        const form = document.getElementById("login-Form"); 
+        form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const email = document.getElementById("loginEmail").value;
+    const password = document.getElementById("loginPassword").value;
+
+    signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            const user = userCredential.user;
+            alert("Login is Successful");
+            window.location.href = "index.html"; 
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            document.getElementById("error").style.display = "block"; 
+            document.getElementById("error").textContent = errorMessage; 
+        });
+});
+
+
+    </script>
+</body>
+</html>

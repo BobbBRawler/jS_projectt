@@ -1,0 +1,437 @@
+      
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.container{
+  margin: 25px;
+}
+h1, h2 {
+    color: #2c3e50;
+    text-align: center;
+    font-weight: bold;
+}
+
+header {
+    background: #343a40;
+    width: 100%;
+    color: black;
+    padding: 20px 0;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0px;
+    z-index: 2;
+    height: 20vh;
+}
+
+header nav h1 {
+    font-size: 24px;
+    text-align: center;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0 0;
+    padding: 2px;
+}
+
+header nav ul li {
+    display: inline;
+}
+
+header nav ul li a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: color 0.3s;
+    border: 1px solid transparent;
+}
+
+header nav ul li a:hover {
+    scale: 1.02;
+    color: white;
+    background-color: #9a9797;
+    border-radius: 20px;
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  max-height: 500px;
+  overflow: hidden;
+  margin-bottom: 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.carousel img {
+  object-fit: cover;
+  height: 500px;
+}
+
+
+.carousel-caption h5 {
+    font-size: 48px;
+    font-weight: bold;
+    color: lightcyan;
+    text-shadow:#1abc9c
+}
+.carousel-caption p{
+  font-size: 24px;
+  color:#d5d7d8;
+
+}
+
+.text{
+  border: 1px solid black;
+  padding: 9px;
+  font-size: 24px;
+  border-radius: 30px;
+  font-weight: 100;
+  background-color: #333;
+  color: white;
+}
+
+section {
+    margin: 10px 0; 
+    padding: 10px; 
+
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    margin: 10px;
+    overflow: hidden;
+    z-index: 0;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+    box-shadow: 10px 10px 5px ;
+    cursor: pointer;
+  }
+  
+  .card img {
+    width: 250px;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .card-content {
+    padding: 15px;
+  }
+  .card-content h3 {
+    margin: 0 0 10px;
+    font-size: 1.5rem;
+    color: #333;
+  }
+  
+  .card-content p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+    color: #666;
+  }
+  
+  .card-content .price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #27ae60;
+  }
+  
+  .card-content .availability {
+    font-size: 0.9rem;
+    color: #e74c3c;
+  }
+  
+  .card-content .availability.available {
+  color:#27ae60;
+}
+
+.cars-section .c-container {
+
+  display: grid;
+  grid-template-columns: auto auto auto auto ;
+  grid-template-rows: auto auto auto;
+  justify-content: space-evenly;
+  gap: 10;
+  padding: 1em;
+  margin: 0.3em;
+}
+
+
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+form input, form button {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+form button {
+    background-color: #1abc9c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+  background-color: #16a085;
+}
+
+
+#bookings-list {
+  padding: 20px;
+  background: #ecf0f1;
+  border-radius: 8px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.booking-item{
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 0.5em;
+  }
+
+
+footer {
+  background: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.items{
+  border: 1px solid black;
+  padding: 1em;
+}
+
+.questions{
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 7px;
+}
+
+
+.search-results {
+  border: 1px solid #221010;
+  padding: 1em;
+  width: 100%;
+
+
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-template-rows: auto auto auto;
+  gap: 10px;
+  border-radius: 10px;
+  }
+
+  .reviews-section {
+    background-color: #f8f9fa;
+    padding: 50px 20px;
+}
+
+.reviews-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.review-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  width: 300px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+}
+
+.review-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.review-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ddd;
+}
+
+.review-info h4 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.review-text {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+}
+ 
+  .animation{
+    width: 100%;
+    height: 100vh;
+  }
+
+  
+  .hover {
+    list-style: none;
+    padding: 40px 0;
+    margin: 0;
+  }
+
+  .text{
+    width: max-content;
+  }
+  
+   .item {
+      display: block;
+      font-family: 'Belleza', sans-serif;
+      position: relative;
+      font-size: 30px;
+      text-align: left;
+      color: black;
+      margin-left: 40px;
+      z-index: 1;
+      padding: 20px;
+      cursor: pointer;
+    }
+  
+  .image {
+    position: absolute;
+    width: 300px;
+    height: 350px;
+    object-fit: cover;
+    transform: translateY(-50%) rotateZ(4deg);
+    top: 80%;
+    right: -150%;
+    z-index: -1;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    box-shadow: 7px 7px 5px ;
+  }
+  .animation .image {
+  transform: translateY(-50%) rotateZ(4deg); 
+}
+
+.social{
+  display: flex;
+  
+}
+
+.social ul li{
+  list-style-type: none;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.social ul li a{
+  color: white;
+}
+.social ul li a:hover{
+  color: lightblue;
+}
+
+/* admin page styles */  
+
+  #managebtn{
+    background-color: #333;
+    color: whitesmoke;
+  }
+  #managebtn:hover{
+    background-color: #666;
+  }
+
+  .editbtn{
+    background-color: lightgoldenrodyellow;
+    color: black;
+    border-radius: 5px;
+  }
+
+  .delbtn{
+    background-color: rgb(124, 124, 123);
+    color: black;
+    border-radius: 5px;
+  }
+
+  .approvebtn{
+    background-color: rgb(54, 168, 62);
+    color: black;
+    border-radius: 5px;
+  }
+
+  .cancelbtn{
+    background-color: rgb(159, 49, 49);
+    color: black;
+    border-radius: 5px;
+  }
+
+
+@media (max-width: 768px) {
+  header{
+    height: max-content;
+  }
+  
+    header nav ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .carousel img {
+        height: 300px;
+    }
+
+    .c-container{
+      display: grid;
+      grid-template-columns: auto auto;
+      grid-template-rows: auto auto auto auto;
+
+    }
+}

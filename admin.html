@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - CRAZy CAR RENTaLS</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f9; }
+        header { background: #333; color: white; text-align: center; padding: 15px; }
+        header h1 { margin: 0; font-size: 30px; }
+        nav ul { display: flex; justify-content: center; padding: 0; list-style: none; margin: 15px 0; }
+        nav ul li { margin: 0 15px; }
+        nav ul li a { color: white; text-decoration: none; font-size: 18px; padding: 8px 15px; border-radius: 5px; transition: background-color 0.3s; }
+        nav ul li a:hover { background-color: #555; }
+        .container { max-width: 1000px; margin: 20px auto; padding: 20px; background: white; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); border-radius: 8px; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+        table th, table td { padding: 12px 15px; border: 1px solid #ddd; text-align: left; }
+        table th { background-color: #f2f2f2; }
+        #addcar{ color:whitesmoke; background-color: #333; }
+        button { padding: 8px 15px; border: none; cursor: pointer; border-radius: 4px; font-size: 16px; transition: background-color 0.3s; }
+        button.editbtn { background-color: #2196F3; color: white; }
+        button.editbtn:hover { background-color: #1e88e5; }
+        button.delbtn { background-color: #f44336; color: white; }
+        button.delbtn:hover { background-color: #e53935; }
+        button.approvebtn { background-color: #4CAF50; color: white; }
+        button.approvebtn:hover { background-color: #43a047; }
+        button.cancelbtn { background-color: #f44336; color: white; }
+        button.cancelbtn:hover { background-color: #e53935; }
+        @media (max-width: 768px) { nav ul { flex-direction: column; align-items: center; } table { font-size: 14px; } }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Admin Panel</h1>
+        <nav>
+            <ul>
+                <li><a href="#manage">Manage Cars</a></li>
+                <li><a href="#bookings">Manage Bookings</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="manage" class="container">
+            <h2>Car Inventory</h2>
+            <button id="addcar" onclick="addNewCar()">Add New Car</button><hr>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Car Name</th>
+                        <th>Brand</th>
+                        <th>Price/Day</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="car_table"></tbody>
+            </table>
+        </section>
+
+        <section id="bookings" class="container">
+            <h2>Bookings</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>User</th>
+                        <th>Car</th>
+                        <th>Pick-Up</th>
+                        <th>Drop-Off</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="booking_table"></tbody>
+            </table>
+        </section>
+    </main>
+
+    <script>
+        const cars = [
+        {
+            id: 4,
+            name: "Chevrolet Camaro",
+            location: "Hyderabad",
+            brand: "Chevrolet",
+            pricePerDay: 5000,
+            fuelType: "Petrol",
+            horsepower: 275,
+            seats: 4,
+            image: "chevralotcamaro.jpg",
+            available: false
+            },
+            {
+            id: 5,
+            name: "BMW 3 Series",
+            location: "Hyderabad",
+            brand: "BMW",
+            pricePerDay: 8000,
+            fuelType: "Diesel",
+            horsepower: 255,
+            seats: 5,
+            image: "bmw3.jpg",
+            available: true
+            },
+            {
+            id: 6,
+            name: "Audi A4",
+            location: "rajamundry",
+            brand: "Audi",
+            pricePerDay: 6000,
+            fuelType: "Petrol",
+            horsepower: 261,
+            seats: 5,
+            image: "audia4.jpg",
+            available: true
+            },
+            {
+            id: 7,
+            name: "Mercedes-Benz C-Class",
+            location: "Hyderabad",
+            brand: "Mercedes-Benz",
+            pricePerDay: 7000,
+            fuelType: "Diesel",
+            horsepower: 255,
+            seats: 5,
+            image: "benzc.jpg",
+            available: true
+            },
+            {
+            id: 8,
+            name: "Porsche 911",
+            location: "Hyderabad",
+            brand: "Porsche",
+            pricePerDay: 7500,
+            fuelType: "Petrol",
+            horsepower: 473,
+            seats: 4,
+            image: "porsche.jpg",
+            available: true
+            },
+            {
+            id: 9,
+            name: "Honda Civic",
+            location: "rajamundry",
+            brand: "Honda",
+            pricePerDay: 1200,
+            fuelType: "Petrol",
+            horsepower: 158,
+            seats: 5,
+            image: "hondacivic.jpg",
+            available: true
+            },
+            {
+            id: 10,
+            name: "Hyundai Sonata",
+            location: "Hyderabad",
+            brand: "Hyundai",
+            pricePerDay: 1200,
+            fuelType: "Hybrid",
+            horsepower: 192,
+            seats: 5,
+            image: "hyundaisonata.jpg",
+            available: true
+            },
+            {
+            id: 11,
+            name: "Jeep Wrangler",
+            location: "visakhapatnam",
+            brand: "Jeep",
+            pricePerDay: 2000,
+            fuelType: "Petrol",
+            horsepower: 285,
+            seats: 5,
+            image: "jeepwrangler.jpg",
+            available: true
+            },
+            {
+            id: 12,
+            name: "Nissan Leaf",
+            location: "visakhapatnam",
+            brand: "Nissan",
+            pricePerDay: 1500,
+            fuelType: "Electric",
+            horsepower: 147,
+            seats: 5,
+            image: "nissan.jpg",
+            available: true
+            },
+        ];
+
+        let bookings = [];
+
+        function loadCars() {
+            const carTable = document.getElementById('car_table');
+            carTable.innerHTML = cars.map(car => `
+                <tr>
+                    <td>${car.id}</td>
+                    <td>${car.name}</td>
+                    <td>${car.brand}</td>
+                    <td>${car.pricePerDay}</td>
+                    <td>${car.available ? 'Available' : 'Unavailable'}</td>
+                    <td>
+                        <button class="editbtn" onclick="editCar(${car.id})">Edit</button>
+                        <button class="delbtn" onclick="deleteCar(${car.id})">Delete</button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        function loadBookings() {
+            const bookingTable = document.getElementById('booking_table');
+            bookingTable.innerHTML = bookings.map(booking => `
+                <tr>
+                    <td>${booking.id}</td>
+                    <td>${booking.user}</td>
+                    <td>${booking.car}</td>
+                    <td>${booking.pickup}</td>
+                    <td>${booking.dropoff}</td>
+                    <td>${booking.status}</td>
+                    <td>
+                        <button class="approvebtn" onclick="updateBookingStatus(${booking.id}, 'Approved')">Approve</button>
+                        <button class="cancelbtn" onclick="updateBookingStatus(${booking.id}, 'Cancelled')">Cancel</button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        function addNewCar() {
+            const name = prompt('Enter car name:');
+            const brand = prompt('Enter car brand:');
+            const price = prompt('Enter price per day:');
+            if (name && brand && price) {
+                cars.push({ id: cars.length + 1, name, brand, pricePerDay: parseFloat(price), available: true });
+                loadCars();
+            }
+        }
+
+        function editCar(carId) {
+            const car = cars.find(c => c.id === carId);
+            if (car) {
+                const newName = prompt('Enter new car name:', car.name);
+                const newBrand = prompt('Enter new car brand:', car.brand);
+                const newPrice = prompt('Enter new price per day:', car.pricePerDay);
+                if (newName && newBrand && newPrice) {
+                    car.name = newName;
+                    car.brand = newBrand;
+                    car.pricePerDay = parseFloat(newPrice);
+                    loadCars();
+                }
+            }
+        }
+
+        function deleteCar(carId) {
+            const index = cars.findIndex(c => c.id === carId);
+            if (index !== -1) {
+                cars.splice(index, 1);
+                loadCars();
+            }
+        }
+
+        function updateBookingStatus(bookingId, status) {
+            const booking = bookings.find(b => b.id === bookingId);
+            if (booking) {
+                booking.status = status;
+                loadBookings();
+            }
+        }
+////////////////////////////////////
+        function loadBookings() {
+            const bookingTable = document.getElementById('booking_table');
+            const bookings = JSON.parse(localStorage.getItem('bookings')) || [];
+            bookingTable.innerHTML = bookings.map(booking => `
+                <tr>
+                    <td>${booking.id}</td>
+                    <td>${booking.user}</td>
+                    <td>${booking.car}</td>
+                    <td>${booking.pickup}</td>
+                    <td>${booking.dropoff}</td>
+                    <td>${booking.status}</td>
+                    <td>
+                        <button class="approvebtn" onclick="updateBookingStatus(${booking.id}, 'Approved')">Approve</button>
+                        <button class="cancelbtn" onclick="updateBookingStatus(${booking.id}, 'Cancelled')">Cancel</button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        function updateBookingStatus(bookingId, status) {
+            let bookings = JSON.parse(localStorage.getItem('bookings')) || [];
+            const booking = bookings.find(b => b.id === bookingId);
+            if (booking) {
+                booking.status = status;
+                localStorage.setItem('bookings', JSON.stringify(bookings)); 
+                loadBookings(); 
+            }
+        }
+
+        window.onload = () => {
+            loadCars();
+            loadBookings();
+        };
+
+        bookings = [
+            { id: 1, user: "John Doe", car: "Tesla Model S", pickup: "2024-12-28", dropoff: "2024-12-30", status: "Pending" },
+            { id: 2, user: "Jane Smith", car: "Ford Mustang", pickup: "2024-12-22", dropoff: "2024-12-25", status: "Approved" }
+        ];
+    </script>
+</body>
+</html>
