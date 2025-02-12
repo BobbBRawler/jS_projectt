@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAX CAR RENTALS</title>
+
+    <script src="https://kit.fontawesome.com/d6cca18a2e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <section class="header">
+      <div class="container">
+          <h1>M<>X  C<>RS</h1>
+          <div class="menu-toggle">☰</div>
+          <nav>
+              <ul>
+                  <li><a href="#home"><i class="fa-solid fa-house"></i> Home</a></li>
+                  <li><a href="#cars"><i class="fa-solid fa-car"></i> Cars</a></li>
+                  <li><a href="#search"><i class="fa-brands fa-searchengin"></i> Search Cars</a></li>
+                  <li><a href="#bookings"><i class="fa-solid fa-book"></i> My Bookings</a></li>
+                  <li><a href="admin.html" target="_blank"> <i class="fa-solid fa-user-tie"></i> Admin</a></li>
+                  <li><a href="#partners"><i class="fa fa-handshake-o"></i> Partners</a></li>
+                  <li><a href="login.html"> <i class="fa-solid fa-right-to-bracket"></i> Login/SignUp</a></li>
+              </ul>
+          </nav>
+      </div>
+    </section>
+  
+</head>
+<body>
+ 
+
+    <main>
+        <section id="home" class="home-section">
+
+            <div id="carouselExampleCaptions" class="carousel slide">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="car2.jpg" class="d-block w-100" alt="">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5>Drive</h5>
+                      <p>"Your next ride, just a click away!"</p>
+                    </div>
+                  </div>
+                  
+                  <div class="carousel-item">
+                    <img src="car3.jpg" class="d-block w-100" alt="">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5>Explore</h5>
+                      <p>"Drive in style, rent with ease."</p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="car1.jpg" class="d-block w-100" alt="">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5>Luxury</h5>
+                      <p>"Unmatched comfort, unlimited miles."</p>
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+        </section>
+        <br> <br> <br> <br>
+
+        <div id = "head" >
+          <h2 >Our Collaborations </h2> <br> <br>
+        </div>
+
+        <section id="partners" class="animation">
+
+          <ul class="hover">
+            <li class="item">
+              <img class="image" src="porsche.jpg"  alt="">
+              <div class="text">Porsche</div>
+            </li>
+            <li class="item">
+              <img class="image" src="benzc.jpg" alt="">
+              <div class="text">Mercedes</div>
+            </li>
+            <li class="item">
+              <img class="image" src="fordmustang.jpg" alt="">
+              <div class="text">Ford mustang</div>
+            </li>
+            <li class="item">
+                <img class="image" src="chevralotcamaro.jpg" alt="">
+                <div class="text"> Chevrolet</div>
+            </li>
+            <li class="item">
+                <img class="image" src="nissan.jpg" alt="">
+                <div class="text"> Nissan </div>
+            </li>
+          </ul>
+
+          </div>
+        </section> <br>
+
+
+         <section id="cars" class="cars-section">
+
+          <div class="container">
+
+            <h2>Our Cars in Service</h2> <br>
+            <div class="c-container" id="c-cars">
+
+            </div>
+          </div>
+         
+         </section>
+
+
+        <section id="search" class="search-section">
+            <div class="container">
+
+                <h2>Search Available Cars</h2> <hr> <br> <br>
+
+  <div id="box">
+
+    <div id="box1">
+      <form id="searchForm">
+        <div id="e1">
+          <label for="pickup-location">Pick-Up Location:</label>
+          <select id="pickup-location" name="pickup-location">
+            <option value="">Select a location</option>
+            <option value="visakhapatnam">Visakhapatnam</option>
+            <option value="Hyderabad">Hyderabad</option>
+            <option value="rajamundry">Rajamundry</option>
+        </select>
+      
+        </div>
+      
+        <div id="e2">
+          <label for="pickup-date">Pick-Up Date:</label>
+          <input type="date" id="pickup-date" name="pickup-date">
+        </div>
+      
+        <div id="e3">
+          <label for="dropoff-date">Drop-Off Date:</label>
+          <input type="date" id="dropoff-date" name="dropoff-date">
+        </div>
+      
+        <div id="e4">
+          <button style="padding: 10px;" type="submit">Search</button>
+        </div>
+      
+      </form>
+    </div>
+    <div id="box2">
+      <div id="search-results" class="search-results">
+      </div>
+    </div>
+    </div>
+
+  </div>              
+
+              
+        </section>
+
+        <section id="bookings" class="bookings-section">
+
+            <div class="container">
+
+                <h2>My Bookings</h2><hr> <br>
+
+                <div id="bookings-list">
+
+                </div>
+            </div>
+        </section>
+
+</main> <br>
+    
+ <section class="freq">
+  <div class="container">
+    <h2 style="font-weight: bold;">Frequently asked questions</h2>
+  <p style="text-align: center;">Have a specific question about our page ?
+    Check the below questions and talk with us. 
+  </p>
+  <div class="questions">
+    <details class="items">
+      <summary style="font-weight: bold;">
+        Want to know about Crazy Cars  
+      </summary>
+      <p>
+        The car rental page serves as a platform for customers to browse, compare, <br> and book vehicles for personal or business use. 
+      </p>
+    </details>
+
+    <details class="items">
+      <summary style="font-weight: bold;">
+        How do I book a car online? 
+      </summary>
+      <p>
+        You can select your desired car, rental dates, and pickup/drop-off locations, <br> then proceed to payment to confirm your booking.
+      </p>
+    </details>
+
+    <details class="items">
+      <summary style="font-weight: bold;">
+        Is there a minimum age requirement to rent a car? 
+      </summary>
+      <p>
+        Yes, the minimum age is usually 21. Some locations may charge <br> extra for drivers under 25.
+      </p>
+    </details>
+
+    <details class="items">
+      <summary style="font-weight: bold;">
+        Can I pick up the car at one location and drop it off at another? 
+      </summary>
+      <p>
+        Yes absolutely, one-way rentals are typically allowed but may incur an extra fee.
+      </p>
+    </details>
+
+    <details class="items">
+      <summary style="font-weight: bold;">
+        What if I return the car late? 
+      </summary>
+      <p>
+        Late returns may result in additional charges. <br> Check your rental agreement for grace periods.
+      </p>
+    </details>
+
+    <details class="items">
+      <summary style="font-weight: bold;">
+        What happens if the car is damaged? 
+      </summary>
+      <p style="font-size: 16px;">
+        If you have coverage, damages are usually covered up to the policy limit. <br> Without coverage, you may be responsible for repair costs.
+      </p>
+    </details>
+
+    <details class="items">
+      <summary style="font-weight: bold;">
+        Can I modify or cancel my booking? 
+      </summary>
+      <p style="font-size: 16px;">
+        Yes, Crazy Cars allow changes or cancellations, but fees may apply <br> depending on the timing, Same car may not be available.
+      </p>
+    </details>
+  </div>
+  </div>
+</section>
+
+<section id="reviews" class="reviews-section">
+  <div class="container">
+      <h2 style="text-align: center;">What Our Customers Say</h2>
+      <p style="text-align: center;">Your feedback drives us to be better every day!</p> <br>
+      <div class="reviews-container"> 
+
+          <div class="review-card">
+              <div class="review-header">
+                  <img src="sanji.jpg" alt="Customer Image" class="review-img">
+                  <div class="review-info">
+                      <h4>Simping Sanji</h4>
+                      <p>⭐⭐⭐⭐⭐</p>
+                  </div>
+              </div>
+              <p class="review-text">
+                  "Amazing service! The car rental adminstation girls are super cute!"
+              </p>
+          </div>
+
+          <div class="review-card">
+              <div class="review-header">
+                  <img src="luffy (1).jpg" alt="Customer Image" class="review-img">
+                  <div class="review-info">
+                      <h4>Foodie Luffy</h4>
+                      <p>⭐⭐⭐⭐</p>
+                  </div>
+              </div>
+              <p class="review-text">
+                  "Great experience overall. Customer support was helpful, and the booking process was smooth, and food provided in office was so ggood."
+              </p>
+          </div>
+
+          <div class="review-card">
+              <div class="review-header">
+                  <img src="zoro.jpg" alt="Customer Image" class="review-img">
+                  <div class="review-info">
+                      <h4>Drunken zoro</h4>
+                      <p>⭐⭐⭐⭐⭐</p>
+                  </div>
+              </div>
+              <p class="review-text">
+                  "I love the variety of cars available. Booking and return were hassle-free. Will use this service again, complimentary booze was super kick!"
+              </p>
+          </div>
+      </div>
+  </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2024 Car Rental System. All rights reserved.</p>
+    </div>
+    <div class="social">
+        <ul class="social">
+          <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-square-facebook"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-square-pinterest"></i></a></li>
+        </ul>
+    </div>
+</footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+      const menuToggle = document.querySelector(".menu-toggle");
+      const navMenu = document.querySelector(".header nav ul");
+
+      menuToggle.addEventListener("click", function () {
+          navMenu.classList.toggle("show-menu");
+          menuToggle.classList.toggle("active"); 
+      });
+  });
+
+
+  
+    
+  /////////////////////////
+/* animation of cars */
+const items = document.querySelectorAll('.animation .item');
+const winWidth = window.innerWidth;
+
+const t = gsap.fromTo(
+".animation .image",
+{ immediateRender: false, rotation: -10 },
+{ rotation: 10, paused: true }
+);
+
+items.forEach((el) => {
+const image = el.querySelector('img');
+const list = el.querySelector('.text');
+
+el.addEventListener('mouseenter', () => {
+  gsap.to(image, { 
+    autoAlpha: 1, 
+    top: '-40%', 
+    right: '50%', 
+    rotation: -4, 
+    duration: 0.3 
+  });
+  gsap.to(list, { 
+    x: 20, 
+    duration: 0.3 
+  });
+});
+
+el.addEventListener('mouseleave', () => {
+  gsap.to(image, { 
+    autoAlpha: 0, 
+    top: '200%', 
+    right: '-100%', 
+    duration: 0.3 
+  });
+  gsap.to(list, { 
+    x: 0, 
+    duration: 0.3 
+  });
+});
+
+
+el.addEventListener('mousemove', (e) => {
+  gsap.set(image, { x: e.offsetX - 80 });
+  gsap.to(t, {
+    progress: e.clientX / winWidth, 
+    duration: 0.4,
+  });
+});
+});
+//////////////////
+
+//////////////////
+          document.addEventListener("DOMContentLoaded", () => {
+              const searchForm = document.getElementById("searchForm");
+              const searchResults = document.getElementById("search-results");
+              const bookingsList = document.getElementById("bookings-list");
+          
+              let cars = [
+                {
+id: 1,
+name: "Tesla Model S",
+location: "visakhapatnam",
+pricePerDay: 5000,
+brand: "Tesla",
+fuelType: "Electric",
+horsepower: 1020,
+seats: 5,
+image: "tesla.jpg",
+available: true
+},
+{
+id: 2,
+name: "Ford Mustang",
+location: "visakhapatnam",
+brand: "Ford",
+pricePerDay: 9000,
+fuelType: "Petrol",
+horsepower: 450,
+seats: 4,
+image: "fordmustang.jpg",
+available: true
+},
+{
+id: 3,
+name: "Toyota Corolla",
+location: "Hyderabad",
+brand: "Toyota",
+pricePerDay: 4500,
+fuelType: "Petrol",
+horsepower: 139,
+seats: 5,
+image: "toyotacorrola.jpg",
+available: true
+},
+{
+id: 4,
+name: "Chevrolet Camaro",
+location: "Hyderabad",
+brand: "Chevrolet",
+pricePerDay: 5000,
+fuelType: "Petrol",
+horsepower: 275,
+seats: 4,
+image: "chevralotcamaro.jpg",
+available: true
+},
+{
+id: 5,
+name: "BMW 3 Series",
+location: "Hyderabad",
+brand: "BMW",
+pricePerDay: 8000,
+fuelType: "Diesel",
+horsepower: 255,
+seats: 5,
+image: "bmw3.jpg",
+available: true
+},
+{
+id: 6,
+name: "Audi A4",
+location: "rajamundry",
+brand: "Audi",
+pricePerDay: 6000,
+fuelType: "Petrol",
+horsepower: 261,
+seats: 5,
+image: "audia4.jpg",
+available: true
+},
+{
+id: 7,
+name: "Benz C-Class",
+location: "Hyderabad",
+brand: "Mercedes-Benz",
+pricePerDay: 7000,
+fuelType: "Diesel",
+horsepower: 255,
+seats: 5,
+image: "benzc.jpg",
+available: true
+},
+{
+id: 8,
+name: "Porsche 911",
+location: "Hyderabad",
+brand: "Porsche",
+pricePerDay: 7500,
+fuelType: "Petrol",
+horsepower: 473,
+seats: 4,
+image: "porsche.jpg",
+available: true
+},
+{
+id: 9,
+name: "Honda Civic",
+location: "rajamundry",
+brand: "Honda",
+pricePerDay: 1200,
+fuelType: "Petrol",
+horsepower: 158,
+seats: 5,
+image: "hondacivic.jpg",
+available: true
+},
+{
+id: 10,
+name: "Hyundai Sonata",
+location: "Hyderabad",
+brand: "Hyundai",
+pricePerDay: 1200,
+fuelType: "Hybrid",
+horsepower: 192,
+seats: 5,
+image: "hyundaisonata.jpg",
+available: true
+},
+{
+id: 11,
+name: "Jeep Wrangler",
+location: "visakhapatnam",
+brand: "Jeep",
+pricePerDay: 2000,
+fuelType: "Petrol",
+horsepower: 285,
+seats: 5,
+image: "jeepwrangler.jpg",
+available: true
+},
+{
+id: 12,
+name: "Nissan Leaf",
+location: "visakhapatnam",
+brand: "Nissan",
+pricePerDay: 1500,
+fuelType: "Electric",
+horsepower: 147,
+seats: 5,
+image: "nissan.jpg",
+available: true
+},
+];
+          
+          const carContainer = document.getElementById("c-cars");
+          
+          cars.forEach((car) => {
+            const carCard = document.createElement("div");
+            carCard.className = "card";
+            carCard.innerHTML = `
+              <img src="${car.image}" alt="${car.name}">
+              
+              <div class="card-content">
+                <h3>${car.name}</h3>
+                <p>Location: ${car.location}</p>
+                <p>Fuel Type: ${car.fuelType}</p>
+                <p>Horsepower: ${car.horsepower} HP</p>
+                <p>Seats: ${car.seats}</p>
+                <p class="price">&#8377;${car.pricePerDay}/day</p>
+                <p class="availability ${car.available ? 'available' : ''}">
+                  ${car.available ? "Available" : "Not Available"}
+                            </p>
+                  </div>
+                `;
+                carContainer.appendChild(carCard);
+              });
+
+              
+              const bookings = [];
+          
+              function isCarAvailable(carId, pickupDate, dropoffDate) {
+              return !bookings.some(booking => 
+                  booking.carId === carId && (
+                      (pickupDate >= booking.pickupDate && pickupDate < booking.dropoffDate) || 
+                      (dropoffDate > booking.pickupDate && dropoffDate <= booking.dropoffDate) ||
+                      (pickupDate <= booking.pickupDate && dropoffDate >= booking.dropoffDate) 
+                  )
+              );
+          }
+        
+          searchForm.addEventListener("submit",(event) => {
+  event.preventDefault();
+
+  const pickupLocation = document.getElementById("pickup-location").value;
+
+
+  const pickupDate = new Date(document.getElementById("pickup-date").value);
+  const dropoffDate = new Date(document.getElementById("dropoff-date").value);
+
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  if (pickupDate < today) {
+      alert("Pick-up date cannot be before today's date.");
+      return;
+  }
+
+if (dropoffDate <= pickupDate) {
+  alert("Drop-off date must be after pick-up date.");
+  return;
+}
+
+  if (!pickupLocation || isNaN(pickupDate) || isNaN(dropoffDate)) {
+      alert("Please fill in all fields correctly.");
+      return;
+  }
+
+  const filteredCars = cars.filter(car => 
+      car.location.toLowerCase() === pickupLocation.toLowerCase() && isCarAvailable(car.id, pickupDate, dropoffDate)
+  );
+
+  searchResults.innerHTML = "";
+
+  if (filteredCars.length > 0) {
+      filteredCars.forEach(car => {
+          const days = Math.ceil((dropoffDate - pickupDate) / (1000 * 60 * 60 * 24));
+          const cost = days * car.pricePerDay;
+
+          const carDiv = document.createElement("div");
+          carDiv.className = "car-result";
+          carDiv.innerHTML = `
+              <h3>${car.name}</h3>
+              <p>Location: ${car.location}</p>
+              <p>Price per day: ₹${car.pricePerDay}</p>
+              <p>Total cost for ${days} days: ₹${cost}</p>
+              <div class="button-container">
+                  <button onclick="bookCar(${car.id}, '${pickupDate.toISOString()}', '${dropoffDate.toISOString()}', ${cost})">Book Now</button>
+              </div>
+          `;
+      
+          carDiv.style.border = "1px solid transparent";
+          carDiv.style.padding = "12px";
+          carDiv.style.borderRadius = "10px";
+          carDiv.style.backgroundColor = "lightgrey";
+          carDiv.style.display = "flex";
+          carDiv.style.flexDirection = "column";
+          carDiv.style.alignItems = "center";                  
+
+          let buttonContainer = carDiv.querySelector('.button-container');
+          buttonContainer.style.display = "flex";
+          buttonContainer.style.justifyContent = "center";
+          buttonContainer.style.width = "100%";
+
+          let button = carDiv.querySelector("button");
+          button.style.padding = "10px 10px";
+          button.style.backgroundColor = "lightgreen";
+          button.style.color = "white";
+          button.style.border = "none";
+          button.style.borderRadius = "5px";
+          button.style.cursor = "pointer";
+
+          button.addEventListener('click', () => {
+  createBooking(car.name, pickupDate, dropoffDate);
+          
+});
+
+          button.addEventListener('mouseover', () => {
+              button.style.backgroundColor = "#45a049";
+          });
+          button.addEventListener('mouseout', () => {
+              button.style.backgroundColor = "#4CAF50";
+          });
+
+          searchResults.appendChild(carDiv);
+      });
+  } else {
+      searchResults.innerHTML = "<p>No cars available for the selected location and dates. Please try another location.</p>";
+  }
+  
+});
+
+          
+  window.bookCar = (carId, pickupDateStr, dropoffDateStr, cost) => {
+  const pickupDate = new Date(pickupDateStr);
+  const dropoffDate = new Date(dropoffDateStr);
+
+  const car = cars.find(c => c.id === carId);
+  if (!car) return;
+
+  bookings.push({
+      id: bookings.length + 1,
+      carId: car.id,
+      carName: car.name,
+      pickupDate,
+      dropoffDate,
+      cost
+  });
+
+  alert(`${car.name} booked successfully!`);
+  updateBookingsList();
+};
+
+function updateBookingsList() {
+  bookingsList.innerHTML = "";
+  if (bookings.length > 0) {
+      bookings.forEach(booking => {
+          const bookingDiv = document.createElement("div");
+          bookingDiv.className = "booking-item";
+          bookingDiv.innerHTML = `
+              <h4>${booking.carName}</h4>
+              <p>Pick-up: ${new Date(booking.pickupDate).toLocaleDateString()}</p>
+              <p>Drop-off: ${new Date(booking.dropoffDate).toLocaleDateString()}</p>
+              <p>Total Cost: ₹${booking.cost}</p>
+          `;
+          bookingsList.appendChild(bookingDiv);
+      });
+  } else {
+      bookingsList.innerHTML = "<p>No bookings yet.</p>";
+  }
+}
+});
+
+
+
+function createBooking() {
+const user = prompt("Enter user name: ");
+const car = prompt("Enter car name: ");
+const pickup = prompt("Enter pick-up date: ");
+const dropoff = prompt("Enter drop-off date: ");
+
+if (user && car && pickup && dropoff) { 
+ const booking = {
+     id: Date.now(),
+     user,
+     car,
+     pickup,
+     dropoff,
+     status: 'Pending',
+ };
+ 
+ let bookings = JSON.parse(localStorage.getItem('bookings')) || [];
+ bookings.push(booking);
+
+ localStorage.setItem('bookings', JSON.stringify(bookings));
+ alert('Booking created!');
+}
+}   
+
+
+</script>
+
+  </script>
+
+
+
+
+  
+
+</body>
+</html>
