@@ -10,32 +10,52 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
-    <section class="header">
-      <div class="container">
-          <h1>M<>X  C<>RS</h1>
-          <div class="menu-toggle">☰</div>
-          <nav>
-              <ul>
-                  <li><a href="#home"><i class="fa-solid fa-house"></i> Home</a></li>
-                  <li><a href="#cars"><i class="fa-solid fa-car"></i> Cars</a></li>
-                  <li><a href="#search"><i class="fa-brands fa-searchengin"></i> Search Cars</a></li>
-                  <li><a href="#bookings"><i class="fa-solid fa-book"></i> My Bookings</a></li>
-                  <li><a href="admin.html" target="_blank"> <i class="fa-solid fa-user-tie"></i> Admin</a></li>
-                  <li><a href="#partners"><i class="fa fa-handshake-o"></i> Partners</a></li>
-                  <li><a href="login.html"> <i class="fa-solid fa-right-to-bracket"></i> Login/SignUp</a></li>
-              </ul>
-          </nav>
-      </div>
-    </section>
-  
 </head>
 <body>
- 
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <i class="fa-solid fa-car-side"></i>| <span> M <> X  C <> RS </span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home"><i class="fa-solid fa-house"></i> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#cars"><i class="fa-solid fa-car"></i> Cars</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#search"><i class="fa-brands fa-searchengin"></i> Search</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#bookings"><i class="fa-solid fa-book"></i> Bookings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin.html" target="_blank"><i class="fa-solid fa-user-tie"></i> Admin</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#partners"><i class="fa fa-handshake-o"></i> Partners</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html"><i class="fa-solid fa-right-to-bracket"></i> Login/SignUp</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header> <br>
 
     <main>
         <section id="home" class="home-section">
 
-            <div id="carouselExampleCaptions" class="carousel slide">
+            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
                 <div class="carousel-indicators">
                   <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                   <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -47,22 +67,22 @@
                     <img src="car2.jpg" class="d-block w-100" alt="">
                     <div class="carousel-caption d-none d-md-block">
                       <h5>Drive</h5>
-                      <p>"Your next ride, just a click away!"</p>
+                      <p style="background-color: rgba(0, 0, 0, 0.6); color: #fff; width: fit-content; text-align: center;  padding: 5px 10px; border-radius: 5px;">"Your next ride, just a click away!"</p>
                     </div>
                   </div>
                   
-                  <div class="carousel-item">
+                  <div class="carousel-item active">
                     <img src="car3.jpg" class="d-block w-100" alt="">
                     <div class="carousel-caption d-none d-md-block">
                       <h5>Explore</h5>
-                      <p>"Drive in style, rent with ease."</p>
+                      <p style="background-color: rgba(0, 0, 0, 0.6); width: fit-content; color: #fff;text-align: center; padding: 5px 10px; border-radius: 5px;">"Drive in style, rent with ease."</p>
                     </div>
                   </div>
-                  <div class="carousel-item">
+                  <div class="carousel-item active">
                     <img src="car1.jpg" class="d-block w-100" alt="">
                     <div class="carousel-caption d-none d-md-block">
                       <h5>Luxury</h5>
-                      <p>"Unmatched comfort, unlimited miles."</p>
+                      <p style="background-color: rgba(0, 0, 0, 0.6); color: #fff;width: fit-content;text-align: center;  padding: 5px 10px; border-radius: 5px;">"Unmatched comfort, unlimited miles."</p>
                     </div>
                   </div>
                 </div>
@@ -82,33 +102,28 @@
           <h2 >Our Collaborations </h2> <br> <br>
         </div>
 
-        <section id="partners" class="animation">
-
-          <ul class="hover">
-            <li class="item">
-              <img class="image" src="porsche.jpg"  alt="">
-              <div class="text">Porsche</div>
-            </li>
-            <li class="item">
-              <img class="image" src="benzc.jpg" alt="">
-              <div class="text">Mercedes</div>
-            </li>
-            <li class="item">
-              <img class="image" src="fordmustang.jpg" alt="">
-              <div class="text">Ford mustang</div>
-            </li>
-            <li class="item">
-                <img class="image" src="chevralotcamaro.jpg" alt="">
-                <div class="text"> Chevrolet</div>
-            </li>
-            <li class="item">
-                <img class="image" src="nissan.jpg" alt="">
-                <div class="text"> Nissan </div>
-            </li>
-          </ul>
-
-          </div>
-        </section> <br>
+<section class="animation-container">
+  <div class="animation-item">
+    <img class="animation-image" src="porsche.jpg" alt="Porsche">
+    <div class="animation-text">Porsche</div>
+  </div>
+  <div class="animation-item">
+    <img class="animation-image" src="benzc.jpg" alt="Mercedes">
+    <div class="animation-text">Mercedes</div>
+  </div>
+  <div class="animation-item">
+    <img class="animation-image" src="fordmustang.jpg" alt="Ford Mustang">
+    <div class="animation-text">Ford Mustang</div>
+  </div>
+  <div class="animation-item">
+    <img class="animation-image" src="chevralotcamaro.jpg" alt="Chevrolet">
+    <div class="animation-text">Chevrolet</div>
+  </div>
+  <div class="animation-item">
+    <img class="animation-image" src="nissan.jpg" alt="Nissan">
+    <div class="animation-text">Nissan</div>
+  </div>
+</section> <br>
 
 
          <section id="cars" class="cars-section">
@@ -127,7 +142,7 @@
         <section id="search" class="search-section">
             <div class="container">
 
-                <h2>Search Available Cars</h2> <hr> <br> <br>
+            <h2>Search Available Cars</h2> <hr> <br> <br>
 
   <div id="box">
 
@@ -166,10 +181,8 @@
     </div>
     </div>
 
-  </div>              
-
-              
-        </section>
+   </div> 
+</section>
 
         <section id="bookings" class="bookings-section">
 
@@ -184,7 +197,7 @@
         </section>
 
 </main> <br>
-    
+
  <section class="freq">
   <div class="container">
     <h2 style="font-weight: bold;">Frequently asked questions</h2>
@@ -323,430 +336,418 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     
-<script>
 
-document.addEventListener("DOMContentLoaded", function () {
-      const menuToggle = document.querySelector(".menu-toggle");
-      const navMenu = document.querySelector(".header nav ul");
+    <script>
 
-      menuToggle.addEventListener("click", function () {
-          navMenu.classList.toggle("show-menu");
-          menuToggle.classList.toggle("active"); 
-      });
-  });
-
-
-  
-    
-  /////////////////////////
-/* animation of cars */
-const items = document.querySelectorAll('.animation .item');
-const winWidth = window.innerWidth;
-
-const t = gsap.fromTo(
-".animation .image",
-{ immediateRender: false, rotation: -10 },
-{ rotation: 10, paused: true }
-);
-
-items.forEach((el) => {
-const image = el.querySelector('img');
-const list = el.querySelector('.text');
-
-el.addEventListener('mouseenter', () => {
-  gsap.to(image, { 
-    autoAlpha: 1, 
-    top: '-40%', 
-    right: '50%', 
-    rotation: -4, 
-    duration: 0.3 
-  });
-  gsap.to(list, { 
-    x: 20, 
-    duration: 0.3 
-  });
-});
-
-el.addEventListener('mouseleave', () => {
-  gsap.to(image, { 
-    autoAlpha: 0, 
-    top: '200%', 
-    right: '-100%', 
-    duration: 0.3 
-  });
-  gsap.to(list, { 
-    x: 0, 
-    duration: 0.3 
-  });
-});
-
-
-el.addEventListener('mousemove', (e) => {
-  gsap.set(image, { x: e.offsetX - 80 });
-  gsap.to(t, {
-    progress: e.clientX / winWidth, 
-    duration: 0.4,
-  });
-});
-});
-//////////////////
-
-//////////////////
-          document.addEventListener("DOMContentLoaded", () => {
-              const searchForm = document.getElementById("searchForm");
-              const searchResults = document.getElementById("search-results");
-              const bookingsList = document.getElementById("bookings-list");
-          
-              let cars = [
-                {
-id: 1,
-name: "Tesla Model S",
-location: "visakhapatnam",
-pricePerDay: 5000,
-brand: "Tesla",
-fuelType: "Electric",
-horsepower: 1020,
-seats: 5,
-image: "tesla.jpg",
-available: true
-},
-{
-id: 2,
-name: "Ford Mustang",
-location: "visakhapatnam",
-brand: "Ford",
-pricePerDay: 9000,
-fuelType: "Petrol",
-horsepower: 450,
-seats: 4,
-image: "fordmustang.jpg",
-available: true
-},
-{
-id: 3,
-name: "Toyota Corolla",
-location: "Hyderabad",
-brand: "Toyota",
-pricePerDay: 4500,
-fuelType: "Petrol",
-horsepower: 139,
-seats: 5,
-image: "toyotacorrola.jpg",
-available: true
-},
-{
-id: 4,
-name: "Chevrolet Camaro",
-location: "Hyderabad",
-brand: "Chevrolet",
-pricePerDay: 5000,
-fuelType: "Petrol",
-horsepower: 275,
-seats: 4,
-image: "chevralotcamaro.jpg",
-available: true
-},
-{
-id: 5,
-name: "BMW 3 Series",
-location: "Hyderabad",
-brand: "BMW",
-pricePerDay: 8000,
-fuelType: "Diesel",
-horsepower: 255,
-seats: 5,
-image: "bmw3.jpg",
-available: true
-},
-{
-id: 6,
-name: "Audi A4",
-location: "rajamundry",
-brand: "Audi",
-pricePerDay: 6000,
-fuelType: "Petrol",
-horsepower: 261,
-seats: 5,
-image: "audia4.jpg",
-available: true
-},
-{
-id: 7,
-name: "Benz C-Class",
-location: "Hyderabad",
-brand: "Mercedes-Benz",
-pricePerDay: 7000,
-fuelType: "Diesel",
-horsepower: 255,
-seats: 5,
-image: "benzc.jpg",
-available: true
-},
-{
-id: 8,
-name: "Porsche 911",
-location: "Hyderabad",
-brand: "Porsche",
-pricePerDay: 7500,
-fuelType: "Petrol",
-horsepower: 473,
-seats: 4,
-image: "porsche.jpg",
-available: true
-},
-{
-id: 9,
-name: "Honda Civic",
-location: "rajamundry",
-brand: "Honda",
-pricePerDay: 1200,
-fuelType: "Petrol",
-horsepower: 158,
-seats: 5,
-image: "hondacivic.jpg",
-available: true
-},
-{
-id: 10,
-name: "Hyundai Sonata",
-location: "Hyderabad",
-brand: "Hyundai",
-pricePerDay: 1200,
-fuelType: "Hybrid",
-horsepower: 192,
-seats: 5,
-image: "hyundaisonata.jpg",
-available: true
-},
-{
-id: 11,
-name: "Jeep Wrangler",
-location: "visakhapatnam",
-brand: "Jeep",
-pricePerDay: 2000,
-fuelType: "Petrol",
-horsepower: 285,
-seats: 5,
-image: "jeepwrangler.jpg",
-available: true
-},
-{
-id: 12,
-name: "Nissan Leaf",
-location: "visakhapatnam",
-brand: "Nissan",
-pricePerDay: 1500,
-fuelType: "Electric",
-horsepower: 147,
-seats: 5,
-image: "nissan.jpg",
-available: true
-},
-];
-          
-          const carContainer = document.getElementById("c-cars");
-          
-          cars.forEach((car) => {
-            const carCard = document.createElement("div");
-            carCard.className = "card";
-            carCard.innerHTML = `
-              <img src="${car.image}" alt="${car.name}">
-              
-              <div class="card-content">
-                <h3>${car.name}</h3>
-                <p>Location: ${car.location}</p>
-                <p>Fuel Type: ${car.fuelType}</p>
-                <p>Horsepower: ${car.horsepower} HP</p>
-                <p>Seats: ${car.seats}</p>
-                <p class="price">&#8377;${car.pricePerDay}/day</p>
-                <p class="availability ${car.available ? 'available' : ''}">
-                  ${car.available ? "Available" : "Not Available"}
-                            </p>
-                  </div>
-                `;
-                carContainer.appendChild(carCard);
-              });
-
-              
-              const bookings = [];
-          
-              function isCarAvailable(carId, pickupDate, dropoffDate) {
-              return !bookings.some(booking => 
-                  booking.carId === carId && (
-                      (pickupDate >= booking.pickupDate && pickupDate < booking.dropoffDate) || 
-                      (dropoffDate > booking.pickupDate && dropoffDate <= booking.dropoffDate) ||
-                      (pickupDate <= booking.pickupDate && dropoffDate >= booking.dropoffDate) 
-                  )
-              );
-          }
-        
-          searchForm.addEventListener("submit",(event) => {
-  event.preventDefault();
-
-  const pickupLocation = document.getElementById("pickup-location").value;
-
-
-  const pickupDate = new Date(document.getElementById("pickup-date").value);
-  const dropoffDate = new Date(document.getElementById("dropoff-date").value);
-
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
-
-  if (pickupDate < today) {
-      alert("Pick-up date cannot be before today's date.");
-      return;
-  }
-
-if (dropoffDate <= pickupDate) {
-  alert("Drop-off date must be after pick-up date.");
-  return;
-}
-
-  if (!pickupLocation || isNaN(pickupDate) || isNaN(dropoffDate)) {
-      alert("Please fill in all fields correctly.");
-      return;
-  }
-
-  const filteredCars = cars.filter(car => 
-      car.location.toLowerCase() === pickupLocation.toLowerCase() && isCarAvailable(car.id, pickupDate, dropoffDate)
-  );
-
-  searchResults.innerHTML = "";
-
-  if (filteredCars.length > 0) {
-      filteredCars.forEach(car => {
-          const days = Math.ceil((dropoffDate - pickupDate) / (1000 * 60 * 60 * 24));
-          const cost = days * car.pricePerDay;
-
-          const carDiv = document.createElement("div");
-          carDiv.className = "car-result";
-          carDiv.innerHTML = `
-              <h3>${car.name}</h3>
-              <p>Location: ${car.location}</p>
-              <p>Price per day: ₹${car.pricePerDay}</p>
-              <p>Total cost for ${days} days: ₹${cost}</p>
-              <div class="button-container">
-                  <button onclick="bookCar(${car.id}, '${pickupDate.toISOString()}', '${dropoffDate.toISOString()}', ${cost})">Book Now</button>
-              </div>
-          `;
+      document.addEventListener("DOMContentLoaded", function () {
+            const menuToggle = document.querySelector(".menu-toggle");
+            const navMenu = document.querySelector(".header nav ul");
       
-          carDiv.style.border = "1px solid transparent";
-          carDiv.style.padding = "12px";
-          carDiv.style.borderRadius = "10px";
-          carDiv.style.backgroundColor = "lightgrey";
-          carDiv.style.display = "flex";
-          carDiv.style.flexDirection = "column";
-          carDiv.style.alignItems = "center";                  
-
-          let buttonContainer = carDiv.querySelector('.button-container');
-          buttonContainer.style.display = "flex";
-          buttonContainer.style.justifyContent = "center";
-          buttonContainer.style.width = "100%";
-
-          let button = carDiv.querySelector("button");
-          button.style.padding = "10px 10px";
-          button.style.backgroundColor = "lightgreen";
-          button.style.color = "white";
-          button.style.border = "none";
-          button.style.borderRadius = "5px";
-          button.style.cursor = "pointer";
-
-          button.addEventListener('click', () => {
-  createBooking(car.name, pickupDate, dropoffDate);
+            menuToggle.addEventListener("click", function () {
+                navMenu.classList.toggle("show-menu");
+                menuToggle.classList.toggle("active"); 
+            });
+        });
+        
+        
           
-});
-
-          button.addEventListener('mouseover', () => {
-              button.style.backgroundColor = "#45a049";
+        /////////////////////////
+      /* animation of cars */
+      const items = document.querySelectorAll('.animation-item');
+      
+        items.forEach(item => {
+          const image = item.querySelector('.animation-image');
+          const text = item.querySelector('.animation-text');
+      
+          item.addEventListener('mouseenter', () => {
+            gsap.to(image, {
+              scale: 1.2,
+              rotation: 4,
+              duration: 0.5,
+              ease: "power4.out",
+            });
+      
+            gsap.to(text, {
+              y: -8,
+              scale: 1.15,
+              color: "#ff5722",
+              duration: 0.4,
+              ease: "back.out(1.7)",
+            });
           });
-          button.addEventListener('mouseout', () => {
-              button.style.backgroundColor = "#4CAF50";
+      
+          item.addEventListener('mouseleave', () => {
+            gsap.to(image, {
+              scale: 1,
+              rotation: 0,
+              duration: 0.5,
+              ease: "power3.inOut",
+            });
+      
+            gsap.to(text, {
+              y: 0,
+              scale: 1,
+              color: "#333",
+              duration: 0.4,
+              ease: "power2.out",
+            });
           });
-
-          searchResults.appendChild(carDiv);
+        });
+      //////////////////
+      
+      //////////////////
+                document.addEventListener("DOMContentLoaded", () => {
+                    const searchForm = document.getElementById("searchForm");
+                    const searchResults = document.getElementById("search-results");
+                    const bookingsList = document.getElementById("bookings-list");
+                
+                    let cars = [
+                      {
+      id: 1,
+      name: "Tesla Model S",
+      location: "visakhapatnam",
+      pricePerDay: 5000,
+      brand: "Tesla",
+      fuelType: "Electric",
+      horsepower: 1020,
+      seats: 5,
+      image: "tesla.jpg",
+      available: true
+      },
+      {
+      id: 2,
+      name: "Ford Mustang",
+      location: "visakhapatnam",
+      brand: "Ford",
+      pricePerDay: 9000,
+      fuelType: "Petrol",
+      horsepower: 450,
+      seats: 4,
+      image: "fordmustang.jpg",
+      available: true
+      },
+      {
+      id: 3,
+      name: "Toyota Corolla",
+      location: "Hyderabad",
+      brand: "Toyota",
+      pricePerDay: 4500,
+      fuelType: "Petrol",
+      horsepower: 139,
+      seats: 5,
+      image: "toyotacorrola.jpg",
+      available: true
+      },
+      {
+      id: 4,
+      name: "Chevrolet Camaro",
+      location: "Hyderabad",
+      brand: "Chevrolet",
+      pricePerDay: 5000,
+      fuelType: "Petrol",
+      horsepower: 275,
+      seats: 4,
+      image: "chevralotcamaro.jpg",
+      available: true
+      },
+      {
+      id: 5,
+      name: "BMW 3 Series",
+      location: "Hyderabad",
+      brand: "BMW",
+      pricePerDay: 8000,
+      fuelType: "Diesel",
+      horsepower: 255,
+      seats: 5,
+      image: "bmw3.jpg",
+      available: true
+      },
+      {
+      id: 6,
+      name: "Audi A4",
+      location: "rajamundry",
+      brand: "Audi",
+      pricePerDay: 6000,
+      fuelType: "Petrol",
+      horsepower: 261,
+      seats: 5,
+      image: "audia4.jpg",
+      available: true
+      },
+      {
+      id: 7,
+      name: "Benz C-Class",
+      location: "Hyderabad",
+      brand: "Mercedes-Benz",
+      pricePerDay: 7000,
+      fuelType: "Diesel",
+      horsepower: 255,
+      seats: 5,
+      image: "benzc.jpg",
+      available: true
+      },
+      {
+      id: 8,
+      name: "Porsche 911",
+      location: "Hyderabad",
+      brand: "Porsche",
+      pricePerDay: 7500,
+      fuelType: "Petrol",
+      horsepower: 473,
+      seats: 4,
+      image: "porsche.jpg",
+      available: true
+      },
+      {
+      id: 9,
+      name: "Honda Civic",
+      location: "rajamundry",
+      brand: "Honda",
+      pricePerDay: 1200,
+      fuelType: "Petrol",
+      horsepower: 158,
+      seats: 5,
+      image: "hondacivic.jpg",
+      available: true
+      },
+      {
+      id: 10,
+      name: "Hyundai Sonata",
+      location: "Hyderabad",
+      brand: "Hyundai",
+      pricePerDay: 1200,
+      fuelType: "Hybrid",
+      horsepower: 192,
+      seats: 5,
+      image: "hyundaisonata.jpg",
+      available: true
+      },
+      {
+      id: 11,
+      name: "Jeep Wrangler",
+      location: "visakhapatnam",
+      brand: "Jeep",
+      pricePerDay: 2000,
+      fuelType: "Petrol",
+      horsepower: 285,
+      seats: 5,
+      image: "jeepwrangler.jpg",
+      available: true
+      },
+      {
+      id: 12,
+      name: "Nissan Leaf",
+      location: "visakhapatnam",
+      brand: "Nissan",
+      pricePerDay: 1500,
+      fuelType: "Electric",
+      horsepower: 147,
+      seats: 5,
+      image: "nissan.jpg",
+      available: true
+      },
+      ];
+                
+                const carContainer = document.getElementById("c-cars");
+                
+                cars.forEach((car) => {
+                  const carCard = document.createElement("div");
+                  carCard.className = "card";
+                  carCard.innerHTML = `
+                    <img src="${car.image}" alt="${car.name}">
+                    
+                    <div class="card-content">
+                      <h3>${car.name}</h3>
+                      <p>Location: ${car.location}</p>
+                      <p>Fuel Type: ${car.fuelType}</p>
+                      <p>Horsepower: ${car.horsepower} HP</p>
+                      <p>Seats: ${car.seats}</p>
+                      <p class="price">&#8377;${car.pricePerDay}/day</p>
+                      <p class="availability ${car.available ? 'available' : ''}">
+                        ${car.available ? "Available" : "Not Available"}
+                                  </p>
+                        </div>
+                      `;
+                      carContainer.appendChild(carCard);
+                    });
+      
+                    
+                    const bookings = [];
+                
+                    function isCarAvailable(carId, pickupDate, dropoffDate) {
+                    return !bookings.some(booking => 
+                        booking.carId === carId && (
+                            (pickupDate >= booking.pickupDate && pickupDate < booking.dropoffDate) || 
+                            (dropoffDate > booking.pickupDate && dropoffDate <= booking.dropoffDate) ||
+                            (pickupDate <= booking.pickupDate && dropoffDate >= booking.dropoffDate) 
+                        )
+                    );
+                }
+              
+                searchForm.addEventListener("submit",(event) => {
+        event.preventDefault();
+      
+        const pickupLocation = document.getElementById("pickup-location").value;
+      
+      
+        const pickupDate = new Date(document.getElementById("pickup-date").value);
+        const dropoffDate = new Date(document.getElementById("dropoff-date").value);
+      
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+      
+        if (pickupDate < today) {
+            alert("Pick-up date cannot be before today's date.");
+            return;
+        }
+      
+      if (dropoffDate <= pickupDate) {
+        alert("Drop-off date must be after pick-up date.");
+        return;
+      }
+      
+        if (!pickupLocation || isNaN(pickupDate) || isNaN(dropoffDate)) {
+            alert("Please fill in all fields correctly.");
+            return;
+        }
+      
+        const filteredCars = cars.filter(car => 
+            car.location.toLowerCase() === pickupLocation.toLowerCase() && isCarAvailable(car.id, pickupDate, dropoffDate)
+        );
+      
+        searchResults.innerHTML = "";
+      
+        if (filteredCars.length > 0) {
+            filteredCars.forEach(car => {
+                const days = Math.ceil((dropoffDate - pickupDate) / (1000 * 60 * 60 * 24));
+                const cost = days * car.pricePerDay;
+      
+                const carDiv = document.createElement("div");
+                carDiv.className = "car-result";
+                carDiv.innerHTML = `
+                    <h3>${car.name}</h3>
+                    <p>Location: ${car.location}</p>
+                    <p>Price per day: ₹${car.pricePerDay}</p>
+                    <p>Total cost for ${days} days: ₹${cost}</p>
+                    <div class="button-container">
+                        <button onclick="bookCar(${car.id}, '${pickupDate.toISOString()}', '${dropoffDate.toISOString()}', ${cost})">Book Now</button>
+                    </div>
+                `;
+            
+                carDiv.style.border = "1px solid transparent";
+                carDiv.style.padding = "12px";
+                carDiv.style.borderRadius = "10px";
+                carDiv.style.backgroundColor = "lightgrey";
+                carDiv.style.display = "flex";
+                carDiv.style.flexDirection = "column";
+                carDiv.style.alignItems = "center";                  
+      
+                let buttonContainer = carDiv.querySelector('.button-container');
+                buttonContainer.style.display = "flex";
+                buttonContainer.style.justifyContent = "center";
+                buttonContainer.style.width = "100%";
+      
+                let button = carDiv.querySelector("button");
+                button.style.padding = "10px 10px";
+                button.style.backgroundColor = "lightgreen";
+                button.style.color = "white";
+                button.style.border = "none";
+                button.style.borderRadius = "5px";
+                button.style.cursor = "pointer";
+      
+                button.addEventListener('click', () => {
+        createBooking(car.name, pickupDate, dropoffDate);
+                
       });
-  } else {
-      searchResults.innerHTML = "<p>No cars available for the selected location and dates. Please try another location.</p>";
-  }
-  
-});
-
-          
-  window.bookCar = (carId, pickupDateStr, dropoffDateStr, cost) => {
-  const pickupDate = new Date(pickupDateStr);
-  const dropoffDate = new Date(dropoffDateStr);
-
-  const car = cars.find(c => c.id === carId);
-  if (!car) return;
-
-  bookings.push({
-      id: bookings.length + 1,
-      carId: car.id,
-      carName: car.name,
-      pickupDate,
-      dropoffDate,
-      cost
-  });
-
-  alert(`${car.name} booked successfully!`);
-  updateBookingsList();
-};
-
-function updateBookingsList() {
-  bookingsList.innerHTML = "";
-  if (bookings.length > 0) {
-      bookings.forEach(booking => {
-          const bookingDiv = document.createElement("div");
-          bookingDiv.className = "booking-item";
-          bookingDiv.innerHTML = `
-              <h4>${booking.carName}</h4>
-              <p>Pick-up: ${new Date(booking.pickupDate).toLocaleDateString()}</p>
-              <p>Drop-off: ${new Date(booking.dropoffDate).toLocaleDateString()}</p>
-              <p>Total Cost: ₹${booking.cost}</p>
-          `;
-          bookingsList.appendChild(bookingDiv);
+      
+                button.addEventListener('mouseover', () => {
+                    button.style.backgroundColor = "#45a049";
+                });
+                button.addEventListener('mouseout', () => {
+                    button.style.backgroundColor = "#4CAF50";
+                });
+      
+                searchResults.appendChild(carDiv);
+            });
+        } else {
+            searchResults.innerHTML = "<p>No cars available for the selected location and dates. Please try another location.</p>";
+        }
+        
       });
-  } else {
-      bookingsList.innerHTML = "<p>No bookings yet.</p>";
-  }
-}
-});
-
-
-
-function createBooking() {
-const user = prompt("Enter user name: ");
-const car = prompt("Enter car name: ");
-const pickup = prompt("Enter pick-up date: ");
-const dropoff = prompt("Enter drop-off date: ");
-
-if (user && car && pickup && dropoff) { 
- const booking = {
-     id: Date.now(),
-     user,
-     car,
-     pickup,
-     dropoff,
-     status: 'Pending',
- };
- 
- let bookings = JSON.parse(localStorage.getItem('bookings')) || [];
- bookings.push(booking);
-
- localStorage.setItem('bookings', JSON.stringify(bookings));
- alert('Booking created!');
-}
-}   
-
-
-</script>
-
-  </script>
-
-
-
-
-  
+      
+                
+        window.bookCar = (carId, pickupDateStr, dropoffDateStr, cost) => {
+        const pickupDate = new Date(pickupDateStr);
+        const dropoffDate = new Date(dropoffDateStr);
+      
+        const car = cars.find(c => c.id === carId);
+        if (!car) return;
+      
+        bookings.push({
+            id: bookings.length + 1,
+            carId: car.id,
+            carName: car.name,
+            pickupDate,
+            dropoffDate,
+            cost
+        });
+      
+        alert(`${car.name} booked successfully!`);
+        updateBookingsList();
+      };
+      
+      function updateBookingsList() {
+        bookingsList.innerHTML = "";
+        if (bookings.length > 0) {
+            bookings.forEach(booking => {
+                const bookingDiv = document.createElement("div");
+                bookingDiv.className = "booking-item";
+                bookingDiv.innerHTML = `
+                    <h4>${booking.carName}</h4>
+                    <p>Pick-up: ${new Date(booking.pickupDate).toLocaleDateString()}</p>
+                    <p>Drop-off: ${new Date(booking.dropoffDate).toLocaleDateString()}</p>
+                    <p>Total Cost: ₹${booking.cost}</p>
+                `;
+                bookingsList.appendChild(bookingDiv);
+            });
+        } else {
+            bookingsList.innerHTML = "<p>No bookings yet.</p>";
+        }
+      }
+      });
+      
+      
+      
+      function createBooking() {
+      const user = prompt("Enter user name: ");
+      const car = prompt("Enter car name: ");
+      const pickup = prompt("Enter pick-up date: ");
+      const dropoff = prompt("Enter drop-off date: ");
+      
+      if (user && car && pickup && dropoff) { 
+       const booking = {
+           id: Date.now(),
+           user,
+           car,
+           pickup,
+           dropoff,
+           status: 'Pending',
+       };
+       
+       let bookings = JSON.parse(localStorage.getItem('bookings')) || [];
+       bookings.push(booking);
+      
+       localStorage.setItem('bookings', JSON.stringify(bookings));
+       alert('Booking created!');
+      }
+      }   
+      
+      
+      </script>
+      
+      
+      
+        </script>  
 
 </body>
 </html>
